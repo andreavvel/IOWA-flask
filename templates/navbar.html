@@ -1,0 +1,66 @@
+<style>
+    .navbar {
+        position: fixed;
+        height: 10vh;
+        width: 100%;
+        background-color: #74c1cd;
+        top: 0;
+    }
+
+    .navbar #user {
+        position: absolute;
+        margin: auto;
+        top: 0;
+        bottom: 0;
+        left: 150px;
+        height: min-content;
+    }
+
+    .navbar .btn {
+        position: absolute;
+        padding: 5px 15px;
+        height: min-content;
+        cursor: pointer;
+        background-color: unset;
+        font-weight: bolder;
+        border-radius: 12px;
+        border: 1px solid black;
+    }
+
+    .navbar .btn-home {
+        position: absolute;
+        margin: auto;
+        top: 0;
+        bottom: 0;
+        left: 10;
+    }
+
+    .navbar .btn-users {
+        position: absolute;
+        margin: auto;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+    }
+
+    .navbar .btn-login {
+        position: absolute;
+        margin: auto;
+        top: 0;
+        bottom: 0;
+        right: 25px;
+    }
+</style>
+<div class="navbar">
+    <span id="user">Hello {{ username }}</span>
+    <form action="/"><button class="btn btn-home" type="submit">Home</button></form>
+    {% if admin %}
+        <form action="users"><button class="btn btn-users" type="submit">Users</button></form>
+    {% endif %}
+    {% if not logged %}
+        <form action="login"><button class="btn btn-login" type="submit">Login</button></form>
+    {% else %}
+        <form action="logout" method="post"><button class="btn btn-login" type="submit">Log Out</button></form>
+    {% endif %}
+</div>

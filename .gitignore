@@ -1,0 +1,8 @@
+#pyenv specific
+.python-version
+
+#cache
+**__pycache__**
+
+#local database
+**.db

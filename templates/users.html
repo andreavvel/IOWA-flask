@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Users</title>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+        table, td, th {
+            border: 1px solid black;
+        }
+        td, th {
+            padding: 2px 15px;
+            vertical-align: middle;
+            text-align: center;
+        }
+        #table-users {
+            width: 50%;
+            overflow-y: scroll;
+            padding-left: 25px;
+        }
+        #content {
+            margin-top: 11vh;
+            display: flex;
+        }
+        form {
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div id="content">
+        <div id="table-users">
+            <h1>Users</h1>  
+            <table>
+            <thead>
+            <tr>
+                <th>id</th>
+                <th>username</th>
+                <th>password</th>
+                <th>admin</th>
+            </tr>
+            </thead>    
+            {% block content %}
+            {% for user in users %}
+                <tr>
+                    <td>{{user.id}}</td>
+                    <td>{{user.username}}</td>
+                    <td>{{user.password}}</td>
+                    <td>{{user.admin}}</td>
+                </tr>
+            {% endfor %}
+            {% endblock %}
+            </table>
+        </div>
+        <div id="add-user-form">
+            <form action="add-user" method="POST">
+                <style>
+                    .flex {
+                        display: flex;
+                    }
+                    .input-box {
+                        margin: 12px 0;
+                        display: flex;
+                        margin-right: 25px;
+                    }
+                    .input-label {
+                        display: block;
+                        width: 75px;
+                    }
+                    .text-input {
+                        margin-left: 25px;
+                    }
+                    .poster-box {
+                        margin-top: 15px;
+                        display: flex;
+                        width: 100%;
+                    }
+                </style>
+                <h1>Add User</h1>
+                <div class="flex">
+                    <div class="input-box">
+                        <label for="username" class="input-label">Username:</label>
+                        <input id="username" name="username" class="text-input" required />
+                    </div>
+                    <div class="input-box">
+                        <label for="password" class="input-label">Password:</label>
+                        <input id="password" name="password" class="text-input" required />
+                    </div>
+                </div>
+                <div>
+                    <div class="input-box">
+                        <label for="admin" class="input-label">Admin:</label>
+                        <input id="admin" name="admin" type="checkbox" class="text-input" />
+                    </div>
+                </div>
+                <br/>
+                <input type="submit" value="Add User" />
+            </form>
+        </div>
+    </div>    
+</body>
+</html>

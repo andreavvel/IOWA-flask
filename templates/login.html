@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        .navbar {
+            top: 0;
+            left: 0;
+            position: fixed;
+            height: 10vh;
+            width: 100%;
+            background-color: #74c1cd;
+        }
+        .content {
+            margin-top: 11vh;
+            padding-left: 15px;
+        }
+        .label {
+            display: block;
+            width: 110px;
+        }
+        .container {
+            display: flex;
+            margin: 15px 0;
+        }
+        #login-btn {
+            padding: 5px 25px;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar"></div>
+    <div class="content">
+        <h1>Login</h1>
+        <form action="login" method="post">
+            <div class="container">
+                <label for="username" class="label">Username:</label>
+                <input id="username" name="username" required/>    
+            </div>
+            <div class="container">
+                <label for="password" class="label">Password:</label>
+                <input id="password" name="password" type="password" required/>
+            </div>
+            {% if error %}
+                <span style="color: red;">Wrong credentials. Try again</span><br><br>
+            {% endif %}
+            <input id="login-btn" type="submit" value="Log In" />
+        </form>
+    </div>
+</body>
+</html>
