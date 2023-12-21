@@ -30,7 +30,7 @@ class Database:
             with closing(connection.cursor()) as cursor:
                 cursor.execute("CREATE TABLE IF NOT EXISTS movies (id INTEGER PRIMARY KEY, name TEXT, year INTEGER, director TEXT, duration INTEGER, poster TEXT);")
                 cursor.execute("CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY, username TEXT, password TEXT, admin INTEGER);")
-                cursor.execute('INSERT OR IGNORE INTO users VALUES(1, "luis", "secret", 1);')    
+                cursor.execute('INSERT OR IGNORE INTO users VALUES(1, "andrea", "secret", 1);')    
                 tables = cursor.execute("SELECT name FROM sqlite_master WHERE type='table';").fetchall()
                 if verbose > 0: print("Tables loaded: ", end="")
                 if verbose > 1: print(tables)
