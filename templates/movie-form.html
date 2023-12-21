@@ -1,55 +1,77 @@
 <form action="add-movie" method="POST">
-    <style>
-        form {
-            margin-top: 11vh;
-            padding-left: 50px;
-        }
-        .flex {
-            display: flex;
-        }
-        .input-box {
-            margin: 12px 0;
-            display: flex;
-            margin-right: 25px;
-        }
-        .input-label {
-            display: block;
-            width: 75px;
-        }
-        .text-input {
-            margin-left: 25px;
-        }
-        .poster-box {
-            margin-top: 15px;
-            display: flex;
-            width: 100%;
-        }
-    </style>
-    <h1>Add Movie</h1>
-    <div class="flex">
-        <div class="input-box">
-            <label for="name" class="input-label">Name:</label>
-            <input id="name" name="name" class="text-input" required />
-        </div>
-        <div class="input-box">
-            <label for="year" class="input-label">Year:</label>
-            <input id="year" type="number" name="year" class="text-input" placeholder="XXXX" required />
-        </div>
+  <style>
+    form {
+      margin-top: 11vh;
+      padding-left: 50px;
+    }
+    .flex {
+      display: flex;
+    }
+    .input-box {
+      margin: 12px 0;
+      display: flex;
+      margin-right: 25px;
+    }
+    .input-label {
+      display: block;
+      width: 75px;
+    }
+    .text-input {
+      margin-left: 25px;
+    }
+    .poster-box {
+      margin-top: 15px;
+      display: flex;
+      width: 100%;
+    }
+  </style>
+  <h1>Add Book</h1>
+  <div class="flex">
+    <div class="input-box">
+      <label for="name" class="input-label">Name:</label>
+      <input id="name" name="name" class="text-input" required />
     </div>
-    <div class="flex">
-        <div class="input-box">
-            <label for="director" class="input-label">Director(s):</label>
-            <input id="director" name="director" class="text-input" required />
-        </div>
-        <div class="input-box">
-            <label for="duration" class="input-label">Duration:</label>
-            <input id="duration" type="number" name="duration" class="text-input" placeholder="X min." required />
-        </div>
+    <div class="input-box">
+      <label for="year" class="input-label">Year:</label>
+      <input
+        id="year"
+        type="number"
+        name="year"
+        class="text-input"
+        placeholder="XXXX"
+        required
+      />
     </div>
-    <div class="poster-box">
-        <label for="poster">Movie Poster URL:</label>
-        <input style="width: 400px;" type="url" id="poster" name="poster" placeholder="https://movie-poster.jpg"  class="text-input" required/>    
+  </div>
+  <div class="flex">
+    <div class="input-box">
+      <label for="director" class="input-label">Author(s):</label>
+      <input id="director" name="director" class="text-input" required />
     </div>
-    <br/>
-    <input type="submit" value="Add Movie" />
+    <div class="input-box">
+      <label for="duration" class="input-label">Pages:</label>
+      <input
+        id="duration"
+        type="number"
+        name="duration"
+        class="text-input"
+        placeholder="X pages."
+        required
+      />
+    </div>
+  </div>
+  <div class="poster-box">
+    <label for="poster">Book cover url:</label>
+    <input
+      style="width: 400px"
+      type="url"
+      id="poster"
+      name="poster"
+      placeholder="https://book-cover.jpg"
+      class="text-input"
+      required
+    />
+  </div>
+  <br />
+  <input type="submit" value="Add Book" />
 </form>

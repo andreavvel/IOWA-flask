@@ -1,78 +1,75 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Movies</title>
+  <head>
+    <title>Books</title>
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-            display: flex;
-        }
-        table {
-            width: 100%;
-        }
-        table, td, th {
-            border: 1px solid black;
-        }
-        th, td {
-            text-align: center;
-            vertical-align: middle;
-            padding: 2px 15px;
-        }
-        .table-container {
-            margin-top: 11vh;
-            max-height: 90vh;
-            width: 50%;
-            overflow-y: scroll;
-            padding: 0 15px;
-        }
+      body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse; /* Add this line */
+      }
+      th,
+      td {
+        border: 1px solid black; /* Move border to td and th */
+        text-align: center;
+        vertical-align: middle;
+        padding: 2px 15px;
+      }
+      .table-container {
+        margin-top: 11vh;
+        max-height: 90vh;
+        width: 50%;
+        overflow-y: scroll;
+        padding: 0 15px;
+      }
 
-        input::-webkit-outer-spin-button,
-        input::-webkit-inner-spin-button {
-            /* display: none; <- Crashes Chrome on hover */
-            -webkit-appearance: none;
-            margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
-        }
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
 
-        input[type=number] {
-            appearance: textfield;
-            -moz-appearance:textfield; /* Firefox */
-        }
+      input[type="number"] {
+        appearance: textfield;
+        -moz-appearance: textfield;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="table-container">
-    <h1>Movie List</h1>
-    <table>
+      <h1>Books List</h1>
+      <table>
         <thead>
-            <tr>
-                <th>id</th>
-                <th>Name</th>
-                <th>Year</th>
-                <th>Director</th>
-                <th>Duration</th>
-                <th>Poster</th>
-            </tr>
+          <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Year</th>
+            <th>Author</th>
+            <th>Pages</th>
+            <th>Cover</th>
+          </tr>
         </thead>
         <tbody>
-            {% block content %}
-            {% for movie in movies %}
-            <tr>
-                <td>{{movie.id}}</td>
-                <td>{{movie.name}}</td>
-                <td>{{movie.year}}</td>
-                <td>{{movie.director}}</td>
-                <td>{{movie.duration}} min.</td>
-                <td>
-                <a target="_blank" rel="norreferer" href={{movie.poster}}>
-                    <img src={{movie.poster}} height=75 /> 
-                </a>
-                </td>
-            </tr>
-            {% endfor %}
-            {% endblock %}
+          {% block content %} {% for movie in movies %}
+          <tr>
+            <td>{{movie.id}}</td>
+            <td>{{movie.name}}</td>
+            <td>{{movie.year}}</td>
+            <td>{{movie.director}}</td>
+            <td>{{movie.duration}}</td>
+            <td>
+              <a target="_blank" rel="norreferer" href="{{movie.poster}}">
+                <img src="{{movie.poster}}" height="75" />
+              </a>
+            </td>
+          </tr>
+          {% endfor %} {% endblock %}
         </tbody>
-    </table>
+      </table>
     </div>
-</body>
+  </body>
 </html>

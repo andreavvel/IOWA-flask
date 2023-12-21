@@ -82,11 +82,11 @@ def getMovieTable(movies: list[tuple]) -> str:
         <h1>Movie List</h1>
         <table>
         <tr>
-            <th>Name</th>
+            <th>Title</th>
             <th>Year</th>
-            <th>Director</th>
-            <th>Duration</th>
-            <th>Poster</th>
+            <th>Writer</th>
+            <th>Pages</th>
+            <th>Cover</th>
         </tr>
     """
     for movie in movies:
